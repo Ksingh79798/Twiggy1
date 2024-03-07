@@ -1,139 +1,52 @@
+import Footer from "./Footer";
+import { SiNetlify } from "react-icons/si";
+import { FaLinkedin } from "react-icons/fa";
+import { FaSquareGithub } from "react-icons/fa6";
+import { CgMail } from "react-icons/cg";
+import { Link } from "react-router-dom";
+
+const Resume_File = "http://localhost:5173/contact/MCA.pdf";
 
 const Contact = () => {
+  const downloadFileAtURL = (url) => {
+    const fileName = url.split("/").pop();
+    const aTag = document.createElement("a");
+    aTag.href = url;
+    aTag.setAttribute("download", fileName);
+    document.body.appendChild(aTag);
+    aTag.click();
+    aTag.remove();
+  };
   return (
-    <div className="mt-[200px]">
-      <h1>This Is Contact Page</h1>
-      <div>
-        {/* <div>
-        <div className="grid  grid-cols-12 m-3">
-          <div className="p-2 grid grid-flow-col gap-4  col-start-2 col-end-12 justify-between items-center border-b-2 border-gray-400">
-            <h3 className=" text-gray-600 font-bold text-lg w-[20vw] col-span-6">
-              Item Name
-            </h3>
-            <h3 className=" col-span-3  flex justify-center text-gray-600 font-bold text-lg  items-center   ">
-              Price
-            </h3>
-            <h3 className=" col-span-3 flex justify-center text-gray-600 font-bold text-lg ">
-              Quantity
-            </h3>
-            <h3 className=" col-span-3 flex justify-center text-gray-600 font-bold text-lg">
-              Total
-            </h3>
-          </div>
-        </div>
-
-        <div className="">
-          {items.map((item) => (
-            <div className="grid grid-cols-12 m-3">
-              <div
-                className="p-2 grid grid-flow-col gap-4  col-start-2 col-end-12  justify-between items-center border-b-2 border-gray-400"
-                key={item.card.info.id}
-              >
-                <div className="col-span-6 w-[20vw]  ">
-                  {/* <img
-                  src={CDN_URL + item?.card?.info?.imageId}
-                  alt={item.card.info.name}
-                /> */}
-        {/* <div className="flex items-center ">
-                    {item.card.info.itemAttribute.vegClassifier == "VEG" ? (
-                      <span className=" text-green-600">
-                        <PiSquareLogoFill />
-                      </span>
-                    ) : (
-                      <span className="font-extrabold text-red-500">
-                        <PiSquareLogoFill />
-                      </span>
-                    )}
-                    <div className="mx-2 text-gray-700 font-semibold">
-                      <h3>{item.card.info.name}</h3>
-                    </div>
-                  </div>
-                </div>
-
-                <div className=" text-gray-600 font-semibold col-span-3  flex justify-center items-center">
-                  ₹
-                  {parseFloat(
-                    item.card.info.defaultPrice / 100 ||
-                      item.card.info.price / 100
-                  ).toFixed(2)}
-                </div>
-
-                <div className=" col-span-3 flex justify-center">
-                  <div className=" flex text-green-500 bg-white border-2 border-gray-300 rounded justify-around items-center w-20">
-                    <span onClick={() => handelDecreaseCart(item)}>
-                      <FaMinus />
-                    </span>
-                    <span className="font-bold text-gray-500">
-                      {" "}
-                      {item.cartQuantity}
-                    </span>
-                    <span onClick={() => handelIncreaseCart(item)}>
-                      <FaPlus />
-                    </span>
-                  </div>
-                </div>
-
-                <div className="text-gray-600 font-semibold  col-span-3 flex justify-center">
-                  ₹
-                  {parseFloat(
-                    (item.card.info.defaultPrice / 100 ||
-                      item.card.info.price / 100) * item.cartQuantity
-                  ).toFixed(2)}
-                </div>
-              </div>
-            </div>
-          ))}
-        </div> */}
-
-        {/* Billing Details */}
-        {/* <div className="grid grid-cols-12 ">
-          <div className="p-2 grid md:grid-flow-col col-start-2 col-end-12 m-3 bg-white justify-between items-center border-b-2 border-gray-400">
-            <div className="border-2 p-2 shadow-xl rounded-lg md:col-span-9 col-span-12 ">
-              <div className="">
-                <div className="flex font-bold text-xl">Bill Details</div>
-                <div className="flex font-semibold justify-between items-center text-gray-600">
-                  <span>Item Total</span>
-                  <span className="">₹{item.cartTotalAmount}</span>
-                </div>
-                <div className="flex font-semibold  text-gray-600 justify-between items-center">
-                  <span>GST and Restaurant Charges @ 5%</span>
-                  <span>₹ {(item.cartTotalAmount * 1) / 20}</span>
-                </div>
-
-                <div className="flex font-bold  justify-between">
-                  <button>To Pay Amount</button>
-                  <span>
-                    ₹ {(item.cartTotalAmount * 1) / 20 + item.cartTotalAmount}
-                  </span>
-                </div>
-              </div>
-            </div>
-
-            <div className="flex m-2 justify-between items-center col-span-12 md:col-span-3">
-              <div>
-                <Link to="/">
-                  <span className="block shadow-xl  font-bold text-xl text-white bg-blue-500 rounded-md p-2 m-2">
-                    To Pay
-                  </span>
-                </Link>
-              </div>
-              <div>
-                <button
-                  className="font-bold shadow-xl  text-xl text-white bg-red-500 rounded-md p-2 m-2"
-                  onClick={handelClearCart}
-                >
-                  Clear Cart
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div> */}
+    <div>
+      <div className="flex lg:h-[60vh] h-[68vh] items-center justify-center">
+        <button
+          onClick={() => {
+            downloadFileAtURL(Resume_File);
+          }}
+          className="font-bold shadow-xl text-[35px] sm:text-[45px] md:text-[50px] text-white bg-red-500 rounded-md p-2 m-2"
+        >
+          Download Resume
+        </button>
       </div>
+      <div className="flex  text-[60px] flex-wrap justify-evenly items-center m-2">
+        <Link to="https://mail.ksingh79798@gmail.com">
+          <CgMail />
+        </Link>
+
+        <Link to="https://github.com/Ksingh79798">
+          <FaSquareGithub />
+        </Link>
+        <Link to="https://www.linkedin.com/in/karan-singh-b861471a4">
+          <FaLinkedin className="text-[#0059c1]" />
+        </Link>
+
+        <Link to="https://app.netlify.com/teams/ksingh79798/sites">
+          <SiNetlify className="text-[#4bc0c0]" />
+        </Link>
+      </div>
+      <Footer />
     </div>
   );
 };
 export default Contact;
-
-
-

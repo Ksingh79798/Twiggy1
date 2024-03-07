@@ -89,7 +89,7 @@ const RestaurantMenu = () => {
               </h4>
             </span>
 
-            <h4 className="time flex justify-center mt-1 gap-3 items-center">
+            <h4 className="time flex mt-1 gap-3 items-center">
               <span className="w-22 p-1 h-10 bg-gray-500 text-white rounded-lg">
                 {totalRatingsString}
               </span>
