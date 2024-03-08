@@ -16,7 +16,7 @@ const Header = () => {
       <header
         // className="flex text-light-text-color fixed top-0 left-0 overflow-y-hidden justify-between shadow-2xl items-center
         // rounded-mg w-[100vw] h-[12vw] lg:h-[7vw] md:h-[10vw] z-[999] bg-header-bg-color  font-[500]"
-        className="bg-header-bg-color flex md:grid md:grid-flow-col md:grid-cols-12 mt-2  h-[10vw] lg:h-[9vw] md:h-[10vw]"
+        className="bg-header-bg-color flex md:grid md:grid-flow-col md:grid-cols-12 m-2  h-[10vw] lg:h-[9vw] md:h-[10vw]"
       >
         <div
           // className="logo-container   w-[16vw]"
@@ -33,11 +33,11 @@ const Header = () => {
 
         <div
           //  className="flex items-center"
-          className="col-start-5 col-span-7 w-[80%]"
+          className="col-start-5 col-span-7 w-[100%]"
         >
           <ul
             //  className=" flex  p-4 m-4"
-            className="flex text-gray-600 shadow-lg w-full p-2 items-center md:justify-end  justify-between h-[12vw] lg:h-[7vw] md:h-[10vw]"
+            className="flex text-gray-600 shadow-lg w-full p-2 items-center md:justify-end  justify-between h-[14vw] sm:h-[12vh] lg:h-[6vw] md:h-[10vw]"
           >
             {/* <li className="p-4">Online Status: {onlineStatus ? "✅" : "⛔"}</li> */}
             <li className="md:p-4 cursor-pointer hover:bg-orange-600 rounded-lg hover:text-white  font-bold ">
