@@ -3,8 +3,8 @@ import Footer from "../components/Footer"
 const About = () => {
   return (
 
-    <div className="mt-10">
-      <div className="flex flex-wrap flex-col md:flex-row justify-evenly items-center h-[70vh] lg:h-[62vh]">
+    <div className="mt-10 m-2">
+      <div className="flex flex-wrap flex-col md:flex-row justify-evenly items-center h-[69vh] sm:h-[66vh] md:h-[63vh] lg:h-[61vh] xl:h-[57vh]">
         <div className=" font-bold w-[250px] sm:w-[300px] md:w-[330px] lg:w-[380px] flex flex-col">
           <h1 className="font-serif w-fit text-gray-700 text-[35px] sm:text-[45px] md:text-[50px]">
             Welcome to <br /> The world of

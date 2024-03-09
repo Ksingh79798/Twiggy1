@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 const Contact = () => {
   return (
     <div>
-      <div className="flex lg:h-[55vh] h-[68vh] sm:h-[63vh] items-center justify-center">
+      <div className="flex h-[65vh] sm:h-[61vh] md:h-[58vh] lg:h-[56vh] xl:h-[52vh]  items-center justify-center">
         <Link
           to="https://drive.google.com/file/d/1MaxCdh8haE3rk1toIT7xni0E-L3CQ_0j/view?usp=sharing"
           target="_blank"

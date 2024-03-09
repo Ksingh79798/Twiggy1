@@ -5,12 +5,14 @@ import MenuResList from "./menuSwiggyData";
 
 const useRestaurantMenu = (resId) => {
   const [resInfo, setResInfo] = useState(null);
+  const [menuStatic, setMenuStatic] = useState(null);
+
   console.log(resInfo);
 
   // console.log(MenuResList1[0]?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card);
   // console.log(MenuResList1[0]);
 
-  // ======  Dynamic Fetch  =====
+  // ======  Dynamic Data Fetch  =====
   useEffect(() => {
     fetchMenu();
   }, []);
@@ -22,18 +24,21 @@ const useRestaurantMenu = (resId) => {
     console.log(json?.data);
   };
 
-  // ==== Static Data  =====
+  // ==== Static Data Fetch =====
 
-  // useEffect(() => {
-  //   fetchData();
-  // }, []);
+  useEffect(() => {
+    const timeoutId = setTimeout(() => {
+      fetchData();
+    }, 1500);
 
-  // const fetchData = () => {
-  //   setResInfo(MenuResList[0]);
-  // };
-  // console.log(resInfo);
+    return () => clearTimeout(timeoutId);
+  }, []);
 
-  return resInfo;
+  const fetchData = () => {
+    setMenuStatic(MenuResList[0]+resId);
+  };
+
+  return { resInfo, menuStatic };
 };
 
 export default useRestaurantMenu;

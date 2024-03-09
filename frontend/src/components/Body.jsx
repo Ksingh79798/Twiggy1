@@ -13,6 +13,7 @@ const Body = () => {
   const [filteredRes, setFilteredRes] = useState([]);
   const [SearchText, setSearchText] = useState("");
   const onlineStatus = useOnlineStatus();
+  
   // const [searchState, setSearchState] = useState("");
 
   //  {const filteredResOfList.length === 0
@@ -61,7 +62,7 @@ const Body = () => {
         <div className="filter lg:flex justify-start sm:col-start-3 sm:col-span-8  sm:h-14 mt-[20px]">
           <div className="search lg:w-[60%]  justify-center flex items-center lg:h-full h-10 ">
             <input
-              className="searchBox sm:w-full h-full  outline-none text-lg font-bold shadow-lg pt-[8px] pr-[15px] pb-[11px] pl-[12px] rounded-tl-lg rounded-bl-lg box-border text-text-color bg-white border-r-0 b border border-gray-500"
+              className="searchBox sm:w-full h-full   outline-none text-lg font-bold shadow-lg pt-[8px] pr-[15px] pb-[11px] pl-[12px] rounded-tl-lg rounded-bl-lg box-border text-text-color bg-white border-r-0 b border hover:border-orange-500"
               type="text"
               placeholder="Seacrh a restaurant ......"
               value={SearchText}
@@ -90,7 +91,7 @@ const Body = () => {
 
           <div className="p-2 flex sm:w-full items-center sm:justify-start justify-center sm:h-full m-2 sm:m-0 h-10  ">
             <button
-              className="search sm:h-full bg-gray-100 border-gray-400 flex items-center text-sm outline-none p-1 h-8 sm:text-lg  shadow-xl  rounded-xl box-border text-gray-700 hover:text-white  hover:bg-gray-500"
+              className="search sm:h-full bg-orange-500  flex items-center text-sm outline-none p-2 h-10 sm:text-lg  shadow-xl  rounded-xl box-border text-white hover:text-black  hover:bg-gray-400"
               onClick={() => {
                 // * Filter logic
                 const filteredList = listOfRes.filter(
@@ -105,7 +106,7 @@ const Body = () => {
             </button>
 
             <button
-              className="search flex sm:h-full items-center outline-none m-4 p-1 h-8 text-sm sm:text-lg  shadow-xl  rounded-xl box-border text-gray-700 bg-gray-100 hover:text-white  hover:bg-gray-500"
+              className="search m-4 sm:h-full bg-orange-500  flex items-center text-sm outline-none p-2 h-10 sm:text-lg  shadow-xl  rounded-xl box-border text-white hover:text-black  hover:bg-gray-400"
               onClick={() => {
                 // * Filter logic
                 const filteredList = listOfRes.filter(
@@ -120,7 +121,7 @@ const Body = () => {
             </button>
 
             <button
-              className="search flex sm:h-full items-center text-sm  outline-none p-1  h-8 sm:text-lg  shadow-xl  rounded-xl box-border text-gray-700 bg-gray-100 hover:text-white  hover:bg-gray-500 "
+              className="search sm:h-full bg-orange-500  flex items-center text-sm outline-none p-2 h-10 sm:text-lg  shadow-xl  rounded-xl box-border text-white hover:text-black  hover:bg-gray-400 "
               onClick={() => {
                 // * Filter logic
                 const filteredList = listOfRes.filter(

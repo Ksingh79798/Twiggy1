@@ -1,5 +1,4 @@
 // Load Dynamic Content here
-// import resList from "../utils/mockData";
 import { CDN_URL } from "../utils/constants";
 import Shimmer from "./Shimmer";
 import { FiClock } from "react-icons/fi";
@@ -14,13 +13,15 @@ const RestaurantMenu = () => {
   const { resId } = useParams();
   // console.log(resId);
 
-  const resInfo = useRestaurantMenu(resId);
+  const { resInfo, menuStatic } = useRestaurantMenu(resId);
   console.log(resInfo);
+  console.log(menuStatic);
+  
 
   // for showitem one at a time(default 1st item show)
   const [showIndex, setShowIndex] = useState(null);
 
-  if (resInfo === null) return <Shimmer />;
+  if (menuStatic === null) return <Shimmer />;
 
   const {
     name,
@@ -30,22 +31,24 @@ const RestaurantMenu = () => {
     locality,
     avgRating,
     totalRatingsString,
-  } = resInfo?.cards[0]?.card?.card?.info;
+  } =
+    resInfo?.cards[0]?.card?.card?.info ||
+    menuStatic?.data?.cards[0]?.card?.card?.info;
 
   const { itemCards } =
-    resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card;
-  console.log(itemCards);
-  // console.log(
-  //   MenuResList1[0]?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR
-  //     ?.cards[2]?.card?.card
-  // );
+    resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card
+      ?.card ||
+    menuStatic?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]
+      ?.card?.card;
 
-  const Categories =
-    resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
-      (c) =>
-        c.card?.card?.["@type"] ===
-        "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
-    );
+  const Categories = (
+    resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards ||
+    menuStatic?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards
+  ).filter(
+    (c) =>
+      c.card?.card?.["@type"] ===
+      "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
+  );
   // console.log(Categories);
 
   // const { itemCards } =
@@ -54,15 +57,15 @@ const RestaurantMenu = () => {
   return (
     <div className="menu ">
       <div className="grid grid-cols-12  m-3">
-        <header className="md:flex  md:justify-around grid  col-start-3 col-span-8 mt-4 shadow-xl rounded-md  bg-gray-200 justify-center items-center menu-header">
-          <div className=" menu-header-left flex justify-center md:col-start-3 md:col-end-8">
+        <header className="md:flex h-[360px] md:h-[300px] md:justify-around grid  col-start-3 col-span-8 mt-4 shadow-xl rounded-md  bg-gray-100 justify-center items-center menu-header">
+          <div className="  menu-header-left flex justify-center md:col-start-3 md:col-end-8">
             <img
               className="rounded-xl w-[180px] h-[150px] mt-1 lg:h-[16vw] md:h-[22vw] box-content overflow-clip  md:w-full"
               src={CDN_URL + cloudinaryImageId}
               alt="Restaurent Info"
             />
           </div>
-          <div className="p-3  menu-header-right">
+          <div className="p-3 menu-header-right">
             <div className="top">
               <h1 className="font-bold pt-4 text-xl text-light-text-color">
                 {name}
