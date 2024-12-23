@@ -1,3 +1,6 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable react/prop-types */
+/* eslint-disable no-unsafe-optional-chaining */
 import { CDN_URL } from "../utils/constants";
 import { AiOutlineStar } from "react-icons/ai";
 import { FiClock } from "react-icons/fi";

@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-unsafe-optional-chaining */
 // Load Dynamic Content here
 import { CDN_URL } from "../utils/constants";
 import Shimmer from "./Shimmer";
@@ -14,8 +16,8 @@ const RestaurantMenu = () => {
   // console.log(resId);
 
   const { resInfo, menuStatic } = useRestaurantMenu(resId);
-  console.log(resInfo);
-  console.log(menuStatic);
+  // console.log(resInfo);
+  // console.log(menuStatic);
   
 
   // for showitem one at a time(default 1st item show)
@@ -32,17 +34,17 @@ const RestaurantMenu = () => {
     avgRating,
     totalRatingsString,
   } =
-    resInfo?.cards[0]?.card?.card?.info ||
+    resInfo?.cards[2]?.card?.card?.info ||
     menuStatic?.data?.cards[0]?.card?.card?.info;
 
   const { itemCards } =
-    resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card
+    resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card
       ?.card ||
     menuStatic?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]
       ?.card?.card;
 
   const Categories = (
-    resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards ||
+    resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards ||
     menuStatic?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards
   ).filter(
     (c) =>

@@ -38,8 +38,8 @@ const Body = () => {
     );
   };
 
-  console.log(SwiggyResList);
-  console.log(filteredRes);
+  // console.log(SwiggyResList);
+  // console.log(filteredRes);
 
   // console.log(SwiggyResList);
 
@@ -81,7 +81,7 @@ const Body = () => {
                 // filteredResOfList.length === 0
                 //   ? setFilteredRes(listOfRes)
                 //   : setFilteredRes(filteredRes);
-                console.log(filteredResOfList);
+                // console.log(filteredResOfList);
               }}
             >
               <GoSearch className="text-xl text-white" />

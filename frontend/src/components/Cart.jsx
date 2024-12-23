@@ -1,3 +1,6 @@
+/* eslint-disable react/jsx-key */
+/* eslint-disable react/prop-types */
+/* eslint-disable no-unused-vars */
 import { CDN_URL } from "../utils/constants";
 // import { PiSquareLogoFill } from "react-icons/pi";
 import { useDispatch, useSelector } from "react-redux";
@@ -26,8 +29,8 @@ const Cart = ({ items }) => {
     dispatch(totalAmount());
   }, [item, dispatch]);
 
-  console.log(item);
-  console.log(items);
+  // console.log(item);
+  // console.log(items);
 
   // const handleRemoveItem = (item) => {
   //   dispatch(removeFromCartItem(item));

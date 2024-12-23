@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { CDN_URL } from "../utils/constants";
 import { PiSquareLogoFill } from "react-icons/pi";
 import { useDispatch } from "react-redux";
@@ -6,7 +7,7 @@ import { addToCartItem } from "../utils/cartSlice";
 
 const ItemList = ({ items }) => {
   const dispatch = useDispatch();
-  console.log(items);
+  // console.log(items);
   // const navigateTo = useNavigate();
 
   const handleAddItem = (item) => {

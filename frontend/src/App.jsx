@@ -1,3 +1,5 @@
+/* eslint-disable react-refresh/only-export-components */
+/* eslint-disable no-unused-vars */
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import Header from "./components/Header";
@@ -11,14 +13,14 @@ import RestaurantMenu from "./components/RestaurantMenu";
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import appStore from "./utils/appStore";
 import { ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css"
+import "react-toastify/dist/ReactToastify.css";
 import AddToCart from "./components/AddToCart";
 
 function App() {
   return (
     <Provider store={appStore}>
-      <div className="app mt-0 m-auto p-0 overflow-x-hidden box-border">
-        <ToastContainer/>
+      <div className="app min-h-screen mt-0 m-auto p-0  overflow-x-hidden box-border">
+        <ToastContainer />
         <Header />
         <Outlet />
         {/* <Body/> */}
@@ -46,7 +48,7 @@ const AppRouter = createBrowserRouter([
       },
       {
         path: "/cart",
-        element: <AddToCart/>,
+        element: <AddToCart />,
       },
       // {
       //   path: "/grocery",

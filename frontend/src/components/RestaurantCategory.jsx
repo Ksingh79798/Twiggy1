@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable react/prop-types */
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import ItemList from "./ItemList";
 

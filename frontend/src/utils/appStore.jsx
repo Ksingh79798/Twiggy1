@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 //S-1:- Build our Store
 //S-2:- Provide this store to App Component
 // S-3:-create a slice (cartSlice)

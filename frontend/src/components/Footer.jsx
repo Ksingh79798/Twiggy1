@@ -1,10 +1,9 @@
 import { FaHeart } from "react-icons/fa";
 import { FcCopyright } from "react-icons/fc";
 
-
 const Footer = () => {
   return (
-    <div className="bg-gray-300  flex-col sm:flex-row sm:bg-pink-300 md:bg-green-400 lg:bg-blue-400 xl:bg-yellow-400 m-2 p-2 shadow-md flex justify-center rounded-lg h-[8vh] sm:h-[10vh]">
+    <div className="bg-gray-300    my-1 mx-1 flex-col sm:flex-row sm:bg-pink-300  md:bg-green-400 lg:bg-blue-400  xl:bg-yellow-400   shadow-md flex justify-center rounded-lg h-[8vh] sm:h-[10vh]">
       <span className="flex justify-center items-center mt-2 sm:mt-0 ">
         <span className="flex items-center justify-center">Created By</span>
         <span className="text-red-500 m-1">

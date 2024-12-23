@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { useDispatch, useSelector } from "react-redux";
 // import ItemList from "./ItemList";
 import { clearCart } from "../utils/cartSlice";
@@ -10,7 +11,7 @@ import Cart from "./Cart";
 
 const AddToCart = () => {
   const cartItems = useSelector((store) => store.cart.items);
-  console.log(cartItems);
+  // console.log(cartItems);
 
   const dispatch = useDispatch();
   const handelClearCart = () => {
